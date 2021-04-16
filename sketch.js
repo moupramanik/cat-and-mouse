@@ -2,35 +2,37 @@ var cat,cat_running;
 var mouse,mouse_running;
 var garden,gardenImage;
 function preload() {
- cat_running=loadAnimation("cat1.png,cat2.png,cat3.png,cat4.png");
-mouse_running=loadAnimation("mouse1.png,mouse2.png,mouse3.png,mouse4.png");
-gardenImage=loadImage("garden.png");
+ cat_running=loadAnimation("images/cat1.png,images/cat2.png,images/cat3.png,images/cat4.png");
+mouse_running=loadAnimation("images/mouse1.png,images/mouse2.png,images/mouse3.png,images/mouse4.png");
+gardenImage=loadImage("images/garden.png");
     //load the images here
 }
 
 function setup(){
     createCanvas(1000,800);
     //create tom and jerry sprites here
-cat=createSprite();
-mouse=createSprite();
+cat=createSprite(870,600);
+cat.addAnimation("cats_sleeping",cat_running);
+mouse=createSprite(200,600);
+mouse.addAnimation("mouse_sleeping",mouse_running);
 }
 
 function draw() {
 
     background(255);
- cat.x=World.mouseX;
+ /*cat.x=World.mouseX;
  cat.y=world.mouseY;   
     //Write condition here to evalute if tom and jerry collide
 if(cat.x-mouse.x<(cat.width-mouse.width)/2){
     cat.addAnimation("catLastImage",catImage3);
     cat.changeAnimation("catLastImage");
     cat.velocityX=0;
-}
+}*/
     drawSprites();
 }
 
 
-function keyPressed(){
+/*function keyPressed(){
 
   //For moving and changing animation write code here
 if(keyCode===LEFT_ARROW){
@@ -39,4 +41,4 @@ if(keyCode===LEFT_ARROW){
     cat.changeAnimation("cat_running");
 }
 
-}
+}*/
